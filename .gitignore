@@ -1,0 +1,5 @@
+# Ignore Visual Studio Code setting file
+**/.vscode
+
+# Ignore Desktop Service Store file
+**/.DS_Store
