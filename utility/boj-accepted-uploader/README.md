@@ -1,4 +1,4 @@
-# [BOJ Accepted Uploader](src폴더) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) ![Python Version](https://img.shields.io/badge/Python-3.8.2-orange)
+# [BOJ Accepted Uploader](src/boj_accepted_uploader.py) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) ![Python Version](https://img.shields.io/badge/Python-3.8.2-orange)
 
 <center><img src="images/ac.png" width="600"/></center> 
 <center><img src="images/thumbnail.gif" width="600"/></center> 
