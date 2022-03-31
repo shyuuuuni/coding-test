@@ -7,6 +7,9 @@
 **NOTE**
 > [백준허브(BaekjoonHub)](https://chrome.google.com/webstore/detail/백준허브baekjoonhub/ccammcjdkpgjmcpijpahlehmapgmphmk?hl=ko) 크롬 확장 프로그램 버전 1.0.12 버전 기준으로 작성된 프로그램입니다. 이후 버전의 확장 프로그램에 해당 기능이 추가될 수 있습니다.
 
+**WARNING**
+> BOJ Accepted Uploader는 M1 MAC 운영체제 환경에서 개발되었기 때문에 Windows에서는 작동하지 않을 수 있습니다.
+
 ## BOJ Accepted Uploader
 
 BOJ Accepted Uploader는 기존 백준 AC(Accepted) 문제들에 크롬 확장 프로그램인 백준허브를 적용할 수 있도록 도와주는 프로그램입니다.
