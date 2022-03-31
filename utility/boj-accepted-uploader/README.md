@@ -1,7 +1,9 @@
 # [BOJ Accepted Uploader](src폴더) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) ![Python Version](https://img.shields.io/badge/Python-3.8.2-orange)
 
-![AC](images/ac.png)
-![Thumbnail](images/thumbnail.gif)
+<center>
+<img src="images/ac.png" width="600"/>
+<img src="images/thumbnail.gif" width="600"/>
+</center>  
 
 **NOTE**
 > [백준허브(BaekjoonHub)](https://chrome.google.com/webstore/detail/백준허브baekjoonhub/ccammcjdkpgjmcpijpahlehmapgmphmk?hl=ko) 크롬 확장 프로그램 버전 1.0.12 버전 기준으로 작성된 프로그램입니다. 이후 버전의 확장 프로그램에 해당 기능이 추가될 수 있습니다.
