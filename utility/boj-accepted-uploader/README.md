@@ -43,6 +43,9 @@ BOJ Accepted Uploader는 다음과 같은 두개의 파일로 구성되어 있�
     * ```--ac``` 는 ```accepted.txt``` 파일의 경로로, 기본값으로 ```accepted.txt```을 제공합니다.
     * ```--begin``` 은 최소 문제 번호로, 해당 번호 이상의 번호들에 대해서만 백준허브 적용을 진행합니다. 기본값으로 0을 제공합니다.
   
+* ```boj_accepted_uploader.py``` 파일을 실행시키기 전에 BOJ 자동 로그인을 활성화 해 두는 것을 추천합니다.
+
+* M1 MAC 유저가 아니라면 ```boj_accepted_uploader.py``` 의 chromepath 부분의 수정이 필요할 수 있습니다. 특히 **Windows**의 경우 경로 확인이 힘들어 따로 입력해 주어야 합니다.
 
 ## Document
 
