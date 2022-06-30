@@ -1,12 +1,11 @@
- /* @author shyuuuuni (seunghyun4525@gmail.com)
-  * @brief 백준 시뮬레이션 연습 문제 풀이
-
-  * @copyright Copyright (c) 2022
-  * 
-  * 문제 조건을 꼼꼼히 살펴보아야 한다. 물고기를 먹을 때 마다 먹은 위치에서부터 새로 BFS를 시작하고,
-  * 최단거리를 먼저 구하고, 최단거리 내의 모든 물고기 집합을 구한다.
-  * 그 중에서 문제 조건에 부합하는 우선순위를 부여해 정렬 한 후 가장 적합한 물고기로 처리해야 한다.
-  */
+/**
+ * @file 백준-14940-쉬운 최단거리-그래프.cpp
+ * @author shyuuuuni (seunghyun4525@gmail.com)
+ * @brief 백준 그래프 연습문제 풀이
+ * @date 2022-07-01
+ * @copyright Copyright (c) 2022
+ * 간단한 BFS 연습 문제이다.
+ */
 #include <bits/stdc++.h>
 
 using namespace std;
