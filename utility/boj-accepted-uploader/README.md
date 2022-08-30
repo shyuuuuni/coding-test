@@ -23,11 +23,15 @@ BOJ Accepted Uploader는 기존 백준 AC(Accepted) 문제들에 크롬 확장 �
 
 BOJ Accepted Uploader는 ```Python3.8.2``` 버전에서 작성되었기 때문에 ```Python3``` 이상의 버전이 필요합니다.
 
-또한 프로그램 실행시 추가로 실행되는 많은 크롬 브라우저 종료를 위해 ```psutil``` 라이브러리를 사용합니다. 따라서 다음 명령어를 통해 ```psutil``` 라이브러리를 설치합니다.
+또한 프로그램 실행시 추가로 실행되는 많은 크롬 브라우저 종료를 위해 ```psutil``` 라이브러리를 사용합니다.
+
+자동으로 맞은 문제를 갖고오기 위해 ```Beautiful Soup 4``` 라이브러리를 사용합니다.
+
+따라서 다음 명령어를 통해 ```psutil bs4``` 라이브러리를 설치합니다.
 
 ```shell
-$ pip install psutil  # pip user
-$ pip3 install psutil # pip3 user
+$ pip install psutil bs4 # pip user
+$ pip3 install psutil bs4 # pip3 user
 ```
 
 ## Usage
@@ -40,11 +44,12 @@ BOJ Accepted Uploader는 다음과 같은 두개의 파일로 구성되어 있�
 
     ```shell
     cd src/
-    python3 boj_accepted_uploader.py --boj_id=seunghyun4525 --ac=accepted.txt --begin=0
+    python3 boj_accepted_uploader.py --boj_id=seunghyun4525 --ac=accepted.txt --begin=0 --autoproblemset=1
     ```
     * ```--boj_id``` 는 필수로 입력해야 하는 값으로, 본인의 백준 아이디를 입력합니다.
     * ```--ac``` 는 ```accepted.txt``` 파일의 경로로, 기본값으로 ```accepted.txt```을 제공합니다.
     * ```--begin``` 은 최소 문제 번호로, 해당 번호 이상의 번호들에 대해서만 백준허브 적용을 진행합니다. 기본값으로 0을 제공합니다.
+    * ```--autoprblemset``` 은 자동으로 맞은 문제들을 갖고 오는 작업을 진행합니다. 기본값으로 0을 제공합니다. 백준 사이트의 잦은 변경으로 작동이 되지 않을 경우 ```--ac``` 를 사용하세요.
   
 * ```boj_accepted_uploader.py``` 파일을 실행시키기 전에 BOJ 자동 로그인을 활성화 해 두는 것을 추천합니다.
 
