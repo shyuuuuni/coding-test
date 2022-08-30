@@ -3,6 +3,9 @@ import psutil
 import webbrowser
 import time
 import argparse
+import os
+from bs4 import BeautifulSoup
+import requests
 
 # 프로그램 인자를 파싱
 parser = argparse.ArgumentParser(description='arguparser')
@@ -11,6 +14,8 @@ parser.add_argument('--boj_id', required=True,
 parser.add_argument('--ac', required=False, default='accepted.txt',
                     help='https://www.acmicpc.net/user/[boj_id]에 표시되는 맞은 문제 목록을 복사한 파일의 이름을 입력합니다.')
 parser.add_argument('--begin', required=False, default=0,
+                    help='시작 할 문제 번호를 입력합니다. 입력하지 않으면 처음부터 진행합니다.')
+parser.add_argument('--autoproblemset', required=False, default=0,
                     help='시작 할 문제 번호를 입력합니다. 입력하지 않으면 처음부터 진행합니다.')
 
 # psutil 라이브러리를 사용하여 이름이 "Google Chrome"인 프로세스 종료
@@ -40,20 +45,32 @@ def run(args):
     boj_id = args.boj_id
     begin_no = args.begin
     ac_list = args.ac
-
+    autoproblemset = args.autoproblemset
+    if not autoproblemset:
     # 맞은 문제 번호를 파일에서 가져온다.
-    f = open(ac_list, 'r')
-    rawdata = f.readline().split()
-    f.close()
+        f = open(ac_list, 'r')
+        rawdata = f.readline().split()
+        f.close()
+    else:
+        url = "https://www.acmicpc.net/user/{}".format(boj_id)
+        html = requests.get(url)
+        html = html.text
+        soup = BeautifulSoup(html, 'html.parser')
+        rawdatas = soup.select("body > div.wrapper > div.container.content > div.row > div:nth-child(2) > \
+            div > div.col-md-9 > div:nth-child(2) > div.panel-body > div > a")
+        rawdata = []
+        for x in rawdatas:
+            rawdata.append(int(x.get_text()))
 
     # begin_no 이상의 번호에 대해서만 가져온다.
     data = list(filter(lambda x: int(begin_no)<=int(x), rawdata))
-
+    
     # M1 MAC OS
     chromepath = "open -a /Applications/Google\ Chrome.app %s"
 
     # Windows
-    # chromepath = [추가 바람]
+    prgm_path = os.environ.get("PROGRAMFILES").replace('\\', '/')
+    chromepath = prgm_path + '/Google/Chrome/Application/chrome.exe %s'
 
     cnt = 0 # 10번 반복 마다 chrome 창을 종료한다.
     for problem_no in data:
