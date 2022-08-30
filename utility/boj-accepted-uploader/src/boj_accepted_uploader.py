@@ -3,6 +3,7 @@ import psutil
 import webbrowser
 import time
 import argparse
+import os
 
 # 프로그램 인자를 파싱
 parser = argparse.ArgumentParser(description='arguparser')
@@ -53,7 +54,8 @@ def run(args):
     chromepath = "open -a /Applications/Google\ Chrome.app %s"
 
     # Windows
-    # chromepath = [추가 바람]
+    prgm_path = os.environ.get("PROGRAMFILES").replace('\\', '/')
+    chromepath = prgm_path + '/Google/Chrome/Application/chrome.exe %s'
 
     cnt = 0 # 10번 반복 마다 chrome 창을 종료한다.
     for problem_no in data:
