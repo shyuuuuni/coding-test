@@ -68,6 +68,7 @@ function solution(board) {
             return Array.from(Array(4), () => Infinity)
         });
     });
+    
     const queue = new Queue();
     
     dp[0][0][d.right] = 0;
