@@ -94,6 +94,8 @@ function solution(board) {
             continue;
         }
         
+        // for (let i=0; i<4; i++) 위아래왼쪽오른쪽 다 때려도 될듯
+        
         // 직진
         const [sx, sy] = [x + straight[dir][0], y + straight[dir][1]];
         const sval = val + 100;
