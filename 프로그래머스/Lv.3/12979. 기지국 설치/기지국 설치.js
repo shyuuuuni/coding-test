@@ -1,48 +1,35 @@
 function solution(n, stations, w) {
-    let answer = 0;
-    let j = 0; // check-point
-    
     const M = stations.length;
-    const set = new Set(stations);
-    
     const func = [];
-        
-    for (let i=0; i<M; i++) {
-        const t = stations[i];
-        const f = (x) => {
-            return t-w <= x && x <= t+w;
-        }
-        func.push(f);
-    }
+    
+    let answer = 0, // 새롭게 설치한 기지국 수
+        j = 0, // check-point
+        ptr = 1; // 확인할 아파트
+    
     
     const check = (x) => {
-        let inRange = false,
-            next = null;
-        
-        for (let i=j; i<M; i++) {
-            const t = stations[i];
-            const f = func[i];
-            
-            if (f(x)) {
-                inRange = true;
-                next = t+w+1;
-                j = i+1;
-            }
-            
-            break;
+        if (M <= j) {
+            return [false];
         }
         
-        return [inRange, next];
+        const t = stations[j];
+        
+        if (t-w <= x && x <= t+w) {
+            j++;
+            return [true, t+w+1];
+        }
+        
+        return [false];
+        
     }
     
-    let ptr = 1;
     
     while (ptr <= n) {
         const [inRange, next] = check(ptr);
         
         // ptr+w 위치에 기지국 설치 (ptr ~ ptr+w(기지국) ~ ptr+w+w 범위)
         if (!inRange) {
-            ptr = ptr+2*w+1;
+            ptr = ptr + 2*w + 1;
             answer++;
             continue;
         }
